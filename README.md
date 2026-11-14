@@ -120,6 +120,13 @@ undanganpernikahan5/
 │   └── app.js        # Logika interaktif (cover, audio, countdown, RSVP, clipboard, modal)
 ├── assets/
 │   ├── images/       # Folder untuk foto mempelai dan galeri
-│   └── audio/        # Folder untuk file musik latar mp3
+│   ├── audio/        # Folder untuk file musik latar mp3
+│   └── screenshots/  # Dokumentasi tangkapan layar tampilan web
 └── README.md         # Petunjuk penggunaan dan kustomisasi
 ```
+
+---
+
+## 👨‍💻 Author
+
+Created with ❤️ by **[Rully Panji](https://github.com/rulipanji3)**
