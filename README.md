@@ -4,6 +4,20 @@ Undangan pernikahan digital berbasis web (*digital wedding invitation*) modern, 
 
 ---
 
+## 📸 Tangkapan Layar (Screenshots)
+
+### 1. Tampilan Layar Pembuka (Cover Gate dengan Nama Tamu Dinamis)
+| Tampilan Desktop / Tablet | Tampilan Smartphone (Mobile) |
+| :---: | :---: |
+| ![Desktop Cover](assets/screenshots/preview-cover.png) | ![Mobile Cover](assets/screenshots/preview-mobile.png) |
+
+### 2. Tampilan Isi Undangan (Hero & Profil Mempelai)
+| Tampilan Pembuka Acara (Hero) | Profil Mempelai & Hitung Mundur |
+| :---: | :---: |
+| ![Hero Section](assets/screenshots/preview-hero.png) | ![Profil Mempelai](assets/screenshots/preview-couple.png) |
+
+---
+
 ## ✨ Fitur Utama
 
 1. **Cover / Door Gate Eksklusif**:

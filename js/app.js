@@ -50,8 +50,28 @@ function initCoverGate() {
   
   if (!coverGate || !btnOpen) return;
 
-  // Kunci scroll saat cover masih tertutup
-  document.body.style.overflow = 'hidden';
+  const urlParams = new URLSearchParams(window.location.search);
+  const previewMode = urlParams.get('preview');
+
+  if (previewMode === 'couple') {
+    coverGate.style.display = 'none';
+    const heroEl = document.getElementById('hero');
+    if (heroEl) heroEl.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  } else if (previewMode === 'event') {
+    coverGate.style.display = 'none';
+    const heroEl = document.getElementById('hero');
+    const coupleEl = document.getElementById('mempelai');
+    if (heroEl) heroEl.style.display = 'none';
+    if (coupleEl) coupleEl.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  } else if (urlParams.get('opened') === 'true') {
+    coverGate.classList.add('opened');
+    document.body.style.overflow = 'auto';
+  } else {
+    // Kunci scroll saat cover masih tertutup
+    document.body.style.overflow = 'hidden';
+  }
 
   btnOpen.addEventListener('click', () => {
     coverGate.classList.add('opened');
