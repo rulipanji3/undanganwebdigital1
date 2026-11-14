@@ -1,0 +1,306 @@
+/* ==========================================================================
+   Undangan Pernikahan Digital - Modern Luxury Emerald & Gold Theme
+   ========================================================================== */
+
+:root {
+  --color-gold: #d4af37;
+  --color-gold-light: #f7e7b4;
+  --color-gold-dark: #aa8214;
+  --color-emerald-deep: #0a1711;
+  --color-emerald-dark: #0f231a;
+  --color-emerald-card: rgba(18, 40, 30, 0.75);
+  --color-emerald-border: rgba(212, 175, 55, 0.28);
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-display: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-emerald-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-dark);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--color-emerald-deep);
+  color: #f1f5f9;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--color-emerald-deep);
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: var(--font-serif);
+}
+.font-script {
+  font-family: var(--font-script);
+  line-height: 1.5 !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  overflow: visible;
+}
+.font-display {
+  font-family: var(--font-display);
+}
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Gold Gradient Text */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fff8db 0%, #e5c365 45%, #b38728 85%, #8c6715 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 0.25em 0.35em;
+  margin: -0.25em -0.35em;
+  overflow: visible;
+  vertical-align: middle;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+}
+
+/* Pastikan elemen heading yang memakai gradient emas tetap menjadi block dan terpusat */
+h1.gold-gradient-text,
+h2.gold-gradient-text,
+h3.gold-gradient-text {
+  display: block !important;
+  width: fit-content;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  clear: both;
+}
+
+/* Khusus saat font script dikombinasikan dengan gradient emas agar lekukan/swash huruf tidak terpotong */
+.font-script.gold-gradient-text {
+  padding-top: 0.35em;
+  padding-bottom: 0.35em;
+  padding-left: 0.45em;
+  padding-right: 0.45em;
+  margin-top: -0.35em;
+  margin-bottom: -0.35em;
+  margin-left: -0.45em;
+  margin-right: -0.45em;
+  line-height: 1.55 !important;
+}
+
+@supports not (-webkit-background-clip: text) {
+  .gold-gradient-text {
+    color: var(--color-gold-light);
+  }
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #ecd381 0%, #d4af37 50%, #9e7811 100%);
+}
+
+.gold-border {
+  border-color: var(--color-emerald-border);
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: var(--color-emerald-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-emerald-border);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(212, 175, 55, 0.1);
+}
+
+.glass-card-hover {
+  transition: all 0.3s ease;
+}
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6), 0 0 25px -2px rgba(212, 175, 55, 0.2);
+}
+
+/* Cover Gate Animation */
+#cover-gate {
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+}
+
+#cover-gate.opened {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Floating Elements */
+.animate-spin-slow {
+  animation: spin 12s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Background Leaf/Petal Falling Effect */
+.petal {
+  position: absolute;
+  top: -20px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.7) 0%, rgba(212, 175, 55, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(105vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Timeline Indicator */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.6), rgba(212, 175, 55, 0.1));
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 24px;
+    transform: none;
+  }
+}
+
+/* Toast Notification */
+#toast {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#toast.show {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+#toast.hide {
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Lightbox Modal */
+#lightbox-modal {
+  transition: opacity 0.3s ease;
+}
+#lightbox-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+#lightbox-modal:not(.active) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Bottom Nav active pill */
+.nav-item.active {
+  color: var(--color-gold-light);
+}
+.nav-item.active span.indicator {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Ornamental Corners */
+.ornament-corner-tl {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 28px;
+  height: 28px;
+  border-top: 2px solid var(--color-gold);
+  border-left: 2px solid var(--color-gold);
+  pointer-events: none;
+}
+.ornament-corner-tr {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border-top: 2px solid var(--color-gold);
+  border-right: 2px solid var(--color-gold);
+  pointer-events: none;
+}
+.ornament-corner-bl {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 28px;
+  height: 28px;
+  border-bottom: 2px solid var(--color-gold);
+  border-left: 2px solid var(--color-gold);
+  pointer-events: none;
+}
+.ornament-corner-br {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border-bottom: 2px solid var(--color-gold);
+  border-right: 2px solid var(--color-gold);
+  pointer-events: none;
+}
